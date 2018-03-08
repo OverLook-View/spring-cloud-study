@@ -1,14 +1,20 @@
 server:
   port: 8888
 spring:
+  profiles:
+    active: native
   application:
     name: config-server
   cloud:
     config:
       label: master
       server:
+        #git线上配置
         git:
           uri: https://github.com/OverLook-View/springcloud-study/
           search-paths: config
           username:
           password:
+        #本地配置
+        native:
+          search-locations: classpath:/properties/
