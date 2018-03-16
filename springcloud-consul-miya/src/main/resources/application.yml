@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    consul:
+      discovery:
+        health-check-path: ${management.contextPath}/health
+        health-check-interval: 15s
+        instance-id: consul-miya
+      host: localhost
+      port: 8500
+  application:
+    name: consul-miya
+server:
+  port: 8502
